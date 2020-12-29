@@ -6,12 +6,12 @@ import Route from './Route';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
-/** Importamos 'ResetPassword' */
 import ResetPassword from '../pages/ResetPassword';
 
+/** Importamos o nosso componente 'Profile' */
+import Profile from '../pages/Profile';
 import Dashboard from '../pages/Dashboard';
 
-/** Criamos a rota 'reset-password' */
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
@@ -19,6 +19,8 @@ const Routes: React.FC = () => (
     <Route path="/forgot-password" component={ForgotPassword} />
     <Route path="/reset-password" component={ResetPassword} />
 
+    {/** Fazemos a criação da rota profile, pasando o componente 'Profile', como uma rota privada */}
+    <Route path="/profile" component={Profile} isPrivate />
     <Route path="/dashboard" component={Dashboard} isPrivate />
   </Switch>
 );
